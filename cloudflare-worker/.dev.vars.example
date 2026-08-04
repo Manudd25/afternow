@@ -1,0 +1,8 @@
+# Wrangler local dev authentication (optional)
+# Copy to .dev.vars — this file is for the Wrangler CLI only, NOT the React app.
+#
+# Option A (recommended): run `wrangler login` instead of using a token here.
+#
+# Option B: uncomment and add your Cloudflare API token so Workers AI works in local dev.
+# The token needs "Workers AI" and "Account" read permissions.
+# CLOUDFLARE_API_TOKEN=

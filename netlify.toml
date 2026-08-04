@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Non-secret build flag only — never put API tokens here.
+[build.environment]
+  AI_IMAGE_PROVIDER = "cloudflare"
+
+# Route AI requests to the Netlify Function (secrets stay server-side in function env).
+[[redirects]]
+  from = "/api/generate-image"
+  to = "/.netlify/functions/generate-image"
+  status = 200
+
+# React Router SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
